@@ -1,32 +1,22 @@
-"""Functions to help Azara and Rui locate pirate treasure."""
-
-
 def get_coordinate(record):
-    """Return coordinate value from a tuple containing the treasure name, and treasure coordinate.
-
-    :param record: tuple - with a (treasure, coordinate) pair.
-    :return: str - the extracted map coordinate.
-    """
-
-    return ""
-
+    tesoro,coordenada = record
+    return coordenada
+print(get_coordinate(('Scrimshawed Whale Tooth','2A')))
+print(get_coordinate(('Silver Seahorse','4E')))
 
 def convert_coordinate(coordinate):
-    """Split the given coordinate into tuple containing its individual components.
-
-    :param coordinate: str - a string map coordinate
-    :return: tuple - the string coordinate split into its individual components.
-    """
-
-    return ()
-
+    coordinate = tuple(coordinate)
+    return coordinate
+print(convert_coordinate("2A"))
 
 def create_record(azara_record, rui_record):
-    """Combine the two record types (if possible) and create a combined record group.
-
-    :param azara_record: tuple - a (treasure, coordinate) pair.
-    :param rui_record: tuple - a (location, coordinate, quadrant) trio.
-    :return: tuple or str - the combined record (if compatible), or the string "not a match" (if incompatible).
-    """
-
-    return ()
+    tesoro, coord1 = azara_record
+    ubi, coord2, cuad = rui_record
+    num, let = coord2
+    coord3 = num+let
+    if coord1 == coord3:
+        return (tesoro,coord1,ubi,coord2,cuad)
+    else:
+        return "Not a match"
+print(create_record(('Brass Spyglass','4B'),('Abandoned Lighthouse',('4','B'),'Blue')))
+print(create_record(('Brass Spyglass', '4B'), ('Seaside Cottages', ('1', 'C'), 'blue')))
