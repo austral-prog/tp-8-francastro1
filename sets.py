@@ -10,8 +10,9 @@ def clean_ingredients(dish_name, dish_ingredients):
 def check_drinks(drink_name, drink_ingredients):
     for ingredient in drink_ingredients:    
         if ingredient in ALCOHOLS:
-            return f'{drink_name} Mocktail'
-        else:
-            return f"{drink_name} Cocktail"
+            return f'{drink_name} Cocktail'
+
+    return f"{drink_name} Mocktail"
+
 #print(check_drinks('Honeydew Cucumber', ['honeydew', 'coconut water', 'mint leaves', 'lime juice', 'salt', 'english cucumber']))
 #print(check_drinks('Shirley Tonic', ['cinnamon stick', 'scotch', 'whole cloves', 'ginger', 'pomegranate juice', 'sugar', 'club soda']))
