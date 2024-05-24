@@ -8,8 +8,8 @@ def clean_ingredients(dish_name, dish_ingredients):
 
 
 def check_drinks(drink_name, drink_ingredients):
-    for ingredient in ALCOHOLS:    
-        if ingredient in drink_ingredients:
+    for ingredient in drink_ingredients:    
+        if ingredient in ALCOHOLS:
             return f'{drink_name} Mocktail'
         else:
             return f"{drink_name} Cocktail"
